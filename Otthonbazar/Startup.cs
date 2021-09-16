@@ -58,7 +58,7 @@ namespace Otthonbazar
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();          //Ati: Ez csak akkor kell ha https-ben vagyunk (de ehez admin joggal kell elindítani a visual studio-t)
+            //app.UseHttpsRedirection();          //Ati: Ez csak akkor kell ha https-ben vagyunk (de ehez admin joggal kell elindítani a visual studio-t)
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
