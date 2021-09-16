@@ -1,10 +1,10 @@
 ﻿{
   "iisSettings": {
     "windowsAuthentication": false, 
-    "anonymousAuthentication": true, 
+    "anonymousAuthentication": true,
     "iisExpress": {
       "applicationUrl": "http://localhost:63858",
-      "sslPort": 44371
+      "sslPort": 44371            //Ati: Ez csak akkor kell ha https-ben vagyunk (de ehez admin joggal kell elindítani a visual studio-t)
     }
   },
   "profiles": {
