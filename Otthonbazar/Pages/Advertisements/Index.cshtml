@@ -21,108 +21,19 @@
             <div class="row">
                 @foreach (var item in Model.Advertisement) {
                     <div class="col-sm-6 col-lg-4 mb-3">
-                        <div class="card">
+                        <article>
                             <img class="card-img-top img-responsive" src="~/images/@item.ImageUrl" alt="https://via.placeholder.com/340x255" title="Picture" />
-                            <div class="card-body">
-                                <div class="card-text">
-                                    <h5 style="display:inline" class="lead pull-left">@item.Price MFt</h5>
-                                    <h5 style="display:inline" class="lead pull-right">bbbbbb</h5>
-                                </div>
-                                <div class="card-text">
-                                    <p style="display:inline" class="lead pull-left">card-title</p>
-                                    <p style="display:inline" class="lead pull-right">card-subtitle</p>
-                                </div>
-                                <div class="card-text">
-                                    <p style="display:inline" class="lead pull-left">1000 ft</p>
-                                </div>
-                                <div class="card-text">
-                                    <p style="display:inline" class="lead pull-left">1000 ft</p>
-                                    <p style="display:inline" class="lead pull-right">1000 ft</p>
-                                </div>
-                            </div>
-                        </div>
+                            <h5 class="lead ">
+                                @item.Price MFt @(item.Size) m2
+                            </h5>
+                            <p><b>@item.City.Zip @item.City.Name @item.Address</b></p>
+                            <p><i>@item.AdvertisementType</i></p>
+                            <p style="display:inline" class="lead pull-left "><b>Szobák:</b></p>
+                            <p style="display:inline" class="lead pull-right">@item.Room</p>
+                        </article>
                     </div>
                 }
             </div>
         </section>
     </div>
 </div>
-
-@*<table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Advertisement[0].Address)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Advertisement[0].BuildDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Advertisement[0].City)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Advertisement[0].Description)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Advertisement[0].HalfRoom)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Advertisement[0].ImageUrl)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Advertisement[0].Price)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Advertisement[0].Room)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Advertisement[0].Size)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Advertisement[0].AdvertisementType)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-    @foreach (var item in Model.Advertisement) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Address)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BuildDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.City.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HalfRoom)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ImageUrl)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Room)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Size)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AdvertisementType)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-    }
-        </tbody>
-    </table>*@
