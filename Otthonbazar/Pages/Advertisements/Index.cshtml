@@ -22,9 +22,11 @@
                 @foreach (var item in Model.Advertisement) {
                     <div class="col-sm-6 col-lg-4 mb-3">
                         <article>
-                            <img class="card-img-top img-responsive" src="~/images/@item.ImageUrl" alt="https://via.placeholder.com/340x255" title="Picture" />
+                            <a asp-page="Details" asp-route-id="@item.Id">
+                                <img class="card-img-top img-responsive" src="~/images/@item.ImageUrl" alt="https://via.placeholder.com/340x255" title="Picture" />
+                            </a>
                             <h5 class="lead ">
-                                @item.Price MFt @(item.Size) m2
+                                <b>@item.Price MFt </b>@(item.Size) m2
                             </h5>
                             <p><b>@item.City.Zip @item.City.Name @item.Address</b></p>
                             <p><i>@item.AdvertisementType</i></p>
