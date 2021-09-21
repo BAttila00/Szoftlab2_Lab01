@@ -29,7 +29,7 @@
                                 <b>@item.Price MFt </b>@(item.Size) m2
                             </h5>
                             <p><b>@item.City.Zip @item.City.Name @item.Address</b></p>
-                            <p><i>@item.AdvertisementType</i></p>
+                            <p><i>@Html.DisplayFor(advert => item.AdvertisementType)</i></p>
                             <p style="display:inline" class="lead pull-left "><b>Szobák:</b></p>
                             <p style="display:inline" class="lead pull-right">@item.Room</p>
                         </article>
