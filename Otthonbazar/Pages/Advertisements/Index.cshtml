@@ -13,37 +13,37 @@
 
 <div class="container">
     <div class="row">
-        <section class="col-lg-3">
+        <section class="col-lg-4">
             <h2>Keresés</h2>
         </section>
-        <section class="col-lg-9">
+        <section class="col-lg-8">
             <h2>Hirdetések</h2>
             <div class="row">
                 @foreach (var item in Model.Advertisement) {
                     <div class="col-sm-6 col-lg-4 mb-3">
                         <div class="card">
-                            <img class="card-img-top img-responsive" src="~/images/@(item.ImageUrl).jpg" alt="https://via.placeholder.com/340x255" title="Picture" />
+                            <img class="card-img-top img-responsive" src="~/images/@item.ImageUrl" alt="https://via.placeholder.com/340x255" title="Picture" />
                             <div class="card-body">
                                 <div class="card-text">
                                     <h5 style="display:inline" class="lead pull-left">@item.Price MFt</h5>
-                                    <h style="display:inline" class="pull-right">bbbbbb</h>
+                                    <h5 style="display:inline" class="lead pull-right">bbbbbb</h5>
                                 </div>
-                                <div class="card-text container">
-                                    <p class="line card-title">
-                                        card-title
-                                    </p>
-                                    <p class="card-subtitle">
-                                        card-subtitle
-                                    </p>
-                                    <p class="text-right">1000 Ft</p>
+                                <div class="card-text">
+                                    <p style="display:inline" class="lead pull-left">card-title</p>
+                                    <p style="display:inline" class="lead pull-right">card-subtitle</p>
                                 </div>
-                                <hr />
+                                <div class="card-text">
+                                    <p style="display:inline" class="lead pull-left">1000 ft</p>
+                                </div>
+                                <div class="card-text">
+                                    <p style="display:inline" class="lead pull-left">1000 ft</p>
+                                    <p style="display:inline" class="lead pull-right">1000 ft</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 }
             </div>
-            }
         </section>
     </div>
 </div>
