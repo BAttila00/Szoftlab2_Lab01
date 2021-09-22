@@ -39,5 +39,9 @@ namespace Otthonbazar.Pages.Advertisements
 
             return RedirectToPage("./Index");
         }
+
+        public ActionResult OnGetZip(int zip) {
+            return new JsonResult(_context.Cities.FirstOrDefault(c => c.Zip == zip.ToString()));
+        }
     }
 }

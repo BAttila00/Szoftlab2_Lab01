@@ -11,7 +11,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form class="form-horizontal" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Advertisement.Address" class="control-label"></label>
@@ -25,11 +25,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="Advertisement.CityId" class="control-label"></label>
-                <select asp-for="Advertisement.CityId" class ="form-control" asp-items="ViewBag.CityId"></select>
+                <select asp-for="Advertisement.CityId" class="form-control" asp-items="ViewBag.CityId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Advertisement.Description" class="control-label"></label>
-                <input asp-for="Advertisement.Description" class="form-control" />
+                <textarea rows="4" cols="50" asp-for="Advertisement.Description" class="form-control"> </textarea>
                 <span asp-validation-for="Advertisement.Description" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -46,6 +46,7 @@
                 <label asp-for="Advertisement.Price" class="control-label"></label>
                 <input asp-for="Advertisement.Price" class="form-control" />
                 <span asp-validation-for="Advertisement.Price" class="text-danger"></span>
+                <span class="input-group-addon">M Ft</span>
             </div>
             <div class="form-group">
                 <label asp-for="Advertisement.Room" class="control-label"></label>
@@ -59,7 +60,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Advertisement.AdvertisementType" class="control-label"></label>
-                <select asp-for="Advertisement.AdvertisementType" class="form-control"></select>
+                <select asp-for="Advertisement.AdvertisementType" class="form-control" asp-items="Html.GetEnumSelectList<Otthonbazar.Data.AdvertisementType>()"></select>
                 <span asp-validation-for="Advertisement.AdvertisementType" class="text-danger"></span>
             </div>
             <div class="form-group">
