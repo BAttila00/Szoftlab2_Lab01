@@ -24,8 +24,12 @@
                 <span asp-validation-for="Advertisement.BuildDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Advertisement.CityId" class="control-label"></label>
-                <select asp-for="Advertisement.CityId" class="form-control" asp-items="ViewBag.CityId"></select>
+                <label class="control-label">Város irányítószám</label>
+                <input asp-for="Advertisement.City.Zip" id="City_Zip" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Város neve</label>
+                <input asp-for="Advertisement.City.Name" id="City_Name" class="form-control" readonly/>
             </div>
             <div class="form-group">
                 <label asp-for="Advertisement.Description" class="control-label"></label>
@@ -76,4 +80,19 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        $(document).ready(function () {
+            $("#City_Zip").on("blur", function (event, b) {
+                // Ha nincs megadva irányítószám, akkor nem hívjuk meg az ajaxot.
+                if ($("#City_Zip").val() === "")
+                    return;
+                //Ezzel hívjuk meg a OnGetIranyitoszam(int iranyitoszam) metodust (itt küld az ajax egy get hívást)
+                $.get("/Advertisements/Create?handler=Iranyitoszam&iranyitoszam=" + event.currentTarget.value).then(function
+                    (data) {
+                    $("#City_Name").val(data.name);
+                });
+            })
+        });
+    </script>
 }
