@@ -27,7 +27,8 @@ namespace Otthonbazar.Pages.Advertisements
         public async Task OnGetAsync()
         {
             Advertisement = await _context.Advertisements
-                .Include(a => a.City).ToListAsync();
+                .Include(a => a.City).ToListAsync();            //Ha több idegen kulcsot akarunk be includolni (ThenInclude)
+                                                                //https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.include?view=efcore-5.0
 
             IQueryable<Advertisement> advertisements = _context.Advertisements.Include(a => a.City);
 
